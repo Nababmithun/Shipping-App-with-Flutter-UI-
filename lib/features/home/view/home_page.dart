@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:interport/features/home/view/widgets/info_card_widget.dart';
+import 'package:interport/features/home/view/widgets/pie_chart_widget.dart';
 import 'package:interport/res/resources/colors.dart';
 import 'package:interport/res/resources/string_resources.dart';
 import 'package:interport/res/widgets/common_text_widget.dart';
@@ -93,6 +94,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            spaceHeightMax,
+            spaceHeightMin,
+            const PieChartWidget(),
           ],
         ),
       ),

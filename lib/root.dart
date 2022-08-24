@@ -10,6 +10,7 @@ class Root extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Interport',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: AppTheme.primarySwatchColor,
       ),
