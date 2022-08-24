@@ -10,7 +10,7 @@ class AppTheme {
   static Color greySecondColor = const Color(0xffC0C0C0);
   static Color lightBlackColor = const Color(0xff666666);
   static Color darkBlackColor = const Color(0xff262626);
-  static Color lightGreyColor = const Color(0xffC0C0C0);
+  static Color lightGreyColor = const Color(0xffF7F7F8);
   static Color lightLightGreyColor = const Color(0xffECECEC);
   static Color appBarColor = const Color(0xffE2ECFF);
   static const MaterialColor primarySwatchColor = MaterialColor(
