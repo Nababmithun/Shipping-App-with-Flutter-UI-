@@ -59,6 +59,7 @@ class _CommonExpandableWidgetState extends State<CommonExpandableWidget> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppTheme.greyFifthColor,
+                  border: Border.all(color: AppTheme.greyThirdColor),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
