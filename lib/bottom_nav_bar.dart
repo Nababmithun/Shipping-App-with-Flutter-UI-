@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interport/features/survey/view/survey_page.dart';
 import 'package:interport/res/resources/colors.dart';
 import 'package:interport/res/widgets/common_text_widget.dart';
 
@@ -25,7 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     List _pages = <Widget>[
       const HomePage(),
       const SizedBox(),
-      const SizedBox(),
+      const SurveyPage(),
     ];
 
     Widget navBarIcon({
