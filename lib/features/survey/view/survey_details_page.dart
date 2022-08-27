@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:interport/features/survey/view/widgets/common_expadable_widget.dart';
+import 'package:interport/res/widgets/common_button_widget.dart';
 
 import '../../../res/resources/colors.dart';
 import '../../../res/widgets/common_text_widget.dart';
@@ -64,26 +65,37 @@ class _SurveyDetailsPageState extends State<SurveyDetailsPage> {
                 ),
               ),
               spaceHeightMax,
+              spaceHeightMin,
               const CommonExpandableWidget(
                 title: "Project Details",
               ),
               spaceHeightMax,
+              spaceHeightMin,
               const CommonExpandableWidget(
                 title: "ET Details",
               ),
               spaceHeightMax,
+              spaceHeightMin,
               const CommonExpandableWidget(
                 title: "C & F Consignee",
               ),
               spaceHeightMax,
+              spaceHeightMin,
               const CommonExpandableWidget(
                 title: "Carrier Agent at BD",
               ),
               spaceHeightMax,
+              spaceHeightMin,
               const CommonExpandableWidget(
                 title: "Final Packing List",
               ),
               spaceHeightMax,
+              spaceHeightMax,
+              spaceHeightMin,
+              CommonButtonWidget(
+                  height: 54,
+                  title: "Add Photos & Damaging information",
+                  onTap: () {}),
             ],
           ),
         ),
