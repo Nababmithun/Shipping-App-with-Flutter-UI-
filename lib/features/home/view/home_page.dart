@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:interport/features/home/view/widgets/info_card_widget.dart';
 import 'package:interport/features/home/view/widgets/pie_chart_widget.dart';
+import 'package:interport/features/profile/view/profile_page.dart';
 import 'package:interport/res/resources/colors.dart';
 import 'package:interport/res/resources/string_resources.dart';
 import 'package:interport/res/widgets/common_text_widget.dart';
@@ -34,16 +35,26 @@ class _HomePageState extends State<HomePage> {
       ),
       leading: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Container(
-          height: 36,
-          width: 36,
-          decoration: BoxDecoration(
-            color: AppTheme.greyColor,
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: const Icon(
-            Icons.person_outline_rounded,
-            color: Colors.white,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfilePage(),
+              ),
+            );
+          },
+          child: Container(
+            height: 36,
+            width: 36,
+            decoration: BoxDecoration(
+              color: AppTheme.greyColor,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: const Icon(
+              Icons.person_outline_rounded,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
