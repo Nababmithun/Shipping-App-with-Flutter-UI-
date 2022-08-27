@@ -4,6 +4,7 @@ import 'package:interport/res/widgets/common_button_widget.dart';
 
 import '../../../res/resources/colors.dart';
 import '../../../res/widgets/common_text_widget.dart';
+import 'add_photos_and_damaging_info_page.dart';
 
 class SurveyDetailsPage extends StatefulWidget {
   const SurveyDetailsPage({Key? key}) : super(key: key);
@@ -95,7 +96,13 @@ class _SurveyDetailsPageState extends State<SurveyDetailsPage> {
               CommonButtonWidget(
                   height: 54,
                   title: "Add Photos & Damaging information",
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const AddPhotoAndDamageInfoPage()));
+                  }),
             ],
           ),
         ),
