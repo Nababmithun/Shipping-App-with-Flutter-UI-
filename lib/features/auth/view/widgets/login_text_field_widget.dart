@@ -32,7 +32,7 @@ class _LoginTextFieldWidgetState extends State<LoginTextFieldWidget> {
         controller: widget.textFieldController,
         cursorColor: AppTheme.primaryColor,
         textAlign: TextAlign.left,
-        obscureText: !isViewPassword,
+        obscureText: widget.isPasswordField && !isViewPassword,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(
             top: 16,
