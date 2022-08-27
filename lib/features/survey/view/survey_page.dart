@@ -12,8 +12,17 @@ class SurveyPage extends StatefulWidget {
 }
 
 class _SurveyPageState extends State<SurveyPage> {
+  int _selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
+    var spaceHeightMax = const SizedBox(
+      height: 10,
+    );
+    var spaceHeightMin = const SizedBox(
+      height: 5,
+    );
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     var appBarWidget = AppBar(
       backgroundColor: AppTheme.appBarColor,
       elevation: 0,
@@ -37,7 +46,72 @@ class _SurveyPageState extends State<SurveyPage> {
       ],
     );
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: appBarWidget,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    _selectedIndex = 1;
+                    setState(() {});
+                  },
+                  child: Container(
+                    height: 48,
+                    width: screenWidth / 2 - 24,
+                    decoration: BoxDecoration(
+                      color: _selectedIndex == 1
+                          ? AppTheme.primaryColor
+                          : AppTheme.greySecondColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: CommonTextWidget(
+                        text: "Assigned",
+                        color: _selectedIndex == 1
+                            ? Colors.white
+                            : AppTheme.darkBlackColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _selectedIndex = 2;
+                    setState(() {});
+                  },
+                  child: Container(
+                    height: 48,
+                    width: screenWidth / 2 - 24,
+                    decoration: BoxDecoration(
+                      color: _selectedIndex == 2
+                          ? AppTheme.primaryColor
+                          : AppTheme.greySecondColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: CommonTextWidget(
+                        text: "All",
+                        color: _selectedIndex == 2
+                            ? Colors.white
+                            : AppTheme.darkBlackColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
