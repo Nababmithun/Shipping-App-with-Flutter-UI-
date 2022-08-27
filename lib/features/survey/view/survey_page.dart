@@ -15,6 +15,7 @@ class SurveyPage extends StatefulWidget {
 
 class _SurveyPageState extends State<SurveyPage> {
   int _selectedIndex = 1;
+  bool _isSearchOpen = false;
   @override
   Widget build(BuildContext context) {
     var spaceHeightMax = const SizedBox(
@@ -39,10 +40,22 @@ class _SurveyPageState extends State<SurveyPage> {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 15.0),
-          child: Image.asset(
-            "assets/search_icon.png",
-            height: 44,
-            width: 44,
+          child: GestureDetector(
+            onTap: () {
+              _isSearchOpen = !_isSearchOpen;
+              setState(() {});
+            },
+            child: _isSearchOpen
+                ? Icon(
+                    Icons.clear,
+                    size: 30,
+                    color: AppTheme.redColor,
+                  )
+                : Icon(
+                    Icons.search,
+                    size: 30,
+                    color: AppTheme.darkBlackColor,
+                  ),
           ),
         ),
       ],
@@ -111,6 +124,28 @@ class _SurveyPageState extends State<SurveyPage> {
                 ),
               ],
             ),
+            spaceHeightMax,
+            _isSearchOpen && _selectedIndex == 1
+                ? const TextField(
+                    decoration: InputDecoration(
+                      hintText: "Search in Assigned Survey",
+                      prefixIcon: Icon(
+                        Icons.search,
+                        size: 30,
+                      ),
+                    ),
+                  )
+                : _isSearchOpen && _selectedIndex == 2
+                    ? const TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search in All Survey",
+                          prefixIcon: Icon(
+                            Icons.search,
+                            size: 30,
+                          ),
+                        ),
+                      )
+                    : const SizedBox(),
             spaceHeightMax,
             Expanded(
               child: _selectedIndex == 1
