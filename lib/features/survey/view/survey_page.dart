@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:interport/features/survey/view/widgets/survey_all_list_widget.dart';
+import 'package:interport/features/survey/view/widgets/survey_asigend_list_widget.dart';
 
 import '../../../res/resources/colors.dart';
 import '../../../res/widgets/common_text_widget.dart';
@@ -108,6 +110,12 @@ class _SurveyPageState extends State<SurveyPage> {
                   ),
                 ),
               ],
+            ),
+            spaceHeightMax,
+            Expanded(
+              child: _selectedIndex == 1
+                  ? const SurveyAssignedListWidget()
+                  : const SurveyAllListWidget(),
             ),
           ],
         ),
